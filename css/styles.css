@@ -982,6 +982,7 @@ h4 {
 }
 
 .modal-close-button svg {
+  cursor: pointer;
   margin: 0;
   padding: 0;
 }
