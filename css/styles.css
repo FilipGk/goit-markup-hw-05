@@ -970,6 +970,7 @@ h4 {
 .modal-close-button {
   display: flex;
   position: absolute;
+  cursor: pointer;
   top: 8px;
   right: 8px;
   align-items: center;
