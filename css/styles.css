@@ -978,10 +978,10 @@ h4 {
   border-radius: 50%;
   border-color: rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
+  cursor: pointer;
 }
 
 .modal-close-button svg {
-  cursor: pointer;
   margin: 0;
   padding: 0;
 }
