@@ -334,10 +334,8 @@ h4 {
 }
 
 .header-contact-wrapper div:hover svg {
-  --color5: var(--fancy-blue-color);
-  --color3: var(--fancy-blue-color);
   cursor: pointer;
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+  fill: var(--fancy-blue-color);
 }
 
 .web-color {
@@ -397,7 +395,6 @@ h4 {
 .footer-contact:hover {
   cursor: pointer;
   color: var(--fancy-blue-color);
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
 .logo-link-footer {
@@ -423,6 +420,34 @@ h4 {
   margin: 0;
 }
 
+.navigation a {
+  position: relative;
+}
+
+.current-page-main::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -32px;
+  background-color: #2196f3;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.current-page-portfolio::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -32px;
+  background-color: #2196f3;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+}
+
 .nav-element {
   font-style: normal;
   font-weight: 500;
@@ -432,16 +457,13 @@ h4 {
   text-decoration: none;
   color: var(--main-text-color);
   margin-right: 46px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-element:hover {
-  color: var(--fancy-blue-color);
-  cursor: pointer;
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
-}
-
+.nav-element:hover,
 .nav-element:focus {
   color: var(--fancy-blue-color);
+  cursor: pointer;
 }
 
 .header li {
@@ -456,12 +478,12 @@ h4 {
   letter-spacing: 0.02em;
   color: var(--text-color);
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-contact:hover {
   color: var(--fancy-blue-color);
   cursor: pointer;
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
 .header-contact:focus {
@@ -658,6 +680,10 @@ h4 {
   background-color: #f5f4fa;
   border: 1px solid #f5f4fa;
   border-radius: 4px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-selector-button:hover,
@@ -668,7 +694,6 @@ h4 {
   border: 1px solid var(--fancy-blue-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
 .portfolio-selector-button:focus {
@@ -680,16 +705,17 @@ h4 {
 
 .project-element {
   height: 404px;
+  position: relative;
   background: #ffffff;
   border-bottom: 1px solid #eeeeee;
   flex-basis: ((100% - 60px)/3);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-element:hover {
   cursor: pointer;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
 .project-element-title {
@@ -743,7 +769,8 @@ h4 {
 }
 
 .our-team-icons {
-  --color1: var(--icon-color);
+  fill: var(--icon-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our-team-icons-wrapper li {
@@ -753,13 +780,12 @@ h4 {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our-team-icons-wrapper li:hover {
   background-color: var(--fancy-blue-color);
-  --color1: #ffffff;
   cursor: pointer;
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
 .our-team-icons-wrapper ul {
@@ -768,8 +794,7 @@ h4 {
 }
 
 .our-team-icons-wrapper li:hover svg {
-  --color1: #ffffff;
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+  fill: #ffffff;
 }
 
 .description-icon-wrapper {
@@ -783,8 +808,8 @@ h4 {
 }
 
 .header-contact-icon {
-  --color5: #757575;
-  --color3: #757575;
+  fill: var(--text-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our-clients li {
@@ -804,14 +829,21 @@ h4 {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   padding: 17px 31px 14px 31px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our-clients div:hover {
   border-color: var(--fancy-blue-color);
   cursor: pointer;
-  --color2: var(--fancy-blue-color);
-  --color3: var(--fancy-blue-color);
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+}
+
+.our-clients div:hover svg {
+  fill: var(--fancy-blue-color);
+}
+
+.our-clients-icon {
+  fill: var(--icon-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our-clients h2 {
@@ -824,14 +856,8 @@ h4 {
   padding-bottom: 50px;
 }
 
-.our-clients-icon {
-  --color2: var(--icon-color);
-  --color3: var(--icon-color);
-}
-
-.our-clients div:hover svg {
-  --color2: var(--fancy-blue-color);
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+.footer-icon {
+  fill: #ffffff;
 }
 
 .footer-icon-wrapper {
@@ -842,13 +868,13 @@ h4 {
   height: 44px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icon-wrapper:hover,
 .footer-icon-wrapper:focus {
   background-color: var(--fancy-blue-color);
   cursor: pointer;
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
 .join-to-us ul {
@@ -880,8 +906,81 @@ h4 {
   color: #ffffff;
   position: absolute;
   bottom: 0;
+  width: 370px;
   background: rgba(47, 48, 58, 0.8);
   padding-block: 27px;
-  padding-left: ;
-  padding-right: ;
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 109.5px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 0px;
+  background-color: rgba(33, 150, 243, 0.9);
+  overflow: hidden;
+  transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-element:hover .image-overlay {
+  height: 294px;
+}
+
+.image-overlay p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  padding: 49px 45px 49px 25px;
+}
+
+.backdrop {
+  position: fixed;
+  display: flex;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0 0 0 / 0.5);
+  z-index: 2;
+}
+
+.modal {
+  width: 528px;
+  height: 581px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  padding: 50px 20px 20px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  border-radius: 4px;
+}
+
+.is-hidden {
+  transform: translateY(100%);
+}
+
+.modal-close-button {
+  display: flex;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border-color: rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.modal-close-button svg {
+  margin: 0;
+  padding: 0;
 }
